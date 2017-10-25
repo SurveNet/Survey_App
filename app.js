@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 
 //Process application/json
 app.use(bodyParser.json())
-
+ 
 // Index route -- HTML WILL GO HERE
 app.get('/', function (req, res) {
 	res.send('Hello world') 
