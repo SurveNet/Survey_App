@@ -26,9 +26,8 @@ app.get('/', function (req, res) {
 })
 
 
-
 //*************************************** */
-app.listen(app.get('port'), function () {
+var server = app.listen(app.get('port'), function () {
     var host = server.address().address
-	console.log('Application running at', host, ' on port', app.get('port'))
+	console.log('Application running at http://%s:%s', host, ' on port', app.get('port'))
 })
