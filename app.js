@@ -5,6 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const app = express();
+var path = require('path')
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -21,12 +22,13 @@ app.use(bodyParser.json())
  
 // Index route -- HTML WILL GO HERE
 app.get('/', function (req, res) {
-	res.send('Hello world') 
+	res.sendFile(path.join(__dirname+'/public/html/index.html'));
 })
 
 
 
 //*************************************** */
 app.listen(app.get('port'), function () {
-	console.log('Application running on port', app.get('port'))
+    var host = server.address().address
+	console.log('Application running at', host, ' on port', app.get('port'))
 })
