@@ -4,3 +4,13 @@
     border: 10 px, solid, #ddd;
     margin: 0 auto;
 }
+
+body{
+    background-color: #ccc;
+}
+
+.video, button{
+    margin-left: auto;
+    margin-right: auto;
+    display: block; 
+}
