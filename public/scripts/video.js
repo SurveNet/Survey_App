@@ -1,4 +1,3 @@
-(function(){
     var video = getElementById('video')
     var canvas = getElementById('canvas')
     var context = canvas.getContext('2d')
@@ -25,7 +24,4 @@
         canvas.width = video.clientWidth;
         canvas.height = video.clientHeight;
         canvas.drawImage(video, 0, 0);
-
     }
-
-})();
