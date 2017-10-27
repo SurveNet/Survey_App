@@ -1,4 +1,4 @@
-.booth{
+.canvas{
     width: 400px;
     background: #ccc;
     border: 10 px, solid, #ddd;
@@ -15,8 +15,8 @@ button{
     display: block; 
 }
 
-.video {
+/*.canvas {
     position: absolute;
     top:  50%;
     left: 50%;
-}
+}*/
