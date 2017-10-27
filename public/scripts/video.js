@@ -1,4 +1,4 @@
-if(document.readyState === 'interactive'){
+if(document.readyState === 'complete'){
 
         var video = document.getElementById('video');
         var canvas = document.getElementById('canvas');
