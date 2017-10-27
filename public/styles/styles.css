@@ -15,6 +15,8 @@ button{
     display: block; 
 }
 
-.video{
-    align-content: center;
+.video {
+    position: absolute;
+    top:  50%;
+    left: 50%;
 }
