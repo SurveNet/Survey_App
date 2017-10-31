@@ -7,6 +7,13 @@ const request = require('request');
 const app = express();
 var path = require('path')
 
+
+//Check if access tokens are present
+if (!config.TENSORPORT_TOKEN) {
+	throw new Error('You are missing a tensorport access token');
+}
+
+
 app.set('port', (process.env.PORT || 5000))
 
 //serve static files in the public directory
