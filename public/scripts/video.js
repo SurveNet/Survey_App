@@ -37,9 +37,11 @@ var capture = function () {
         // only create timer events as needed.
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
-    context.drawImage(video, 0, 0, video.width,    video.height,     // source rectangle
-        0, 0, canvas.width/2, canvas.height/2);
 
+    var hRatio = canvas.width / video.width    ;
+    var vRatio = canvas.height / video.height  ;
+    var ratio  = Math.min ( hRatio, vRatio );
+    context.drawImage(img, 0,0, video.width, video.height, 0,0,video.width*ratio, video.height*ratio);
 
     // var dataURL = canvas.toDataURL("image/png");
     // document.getElementById('hidden_data').value = dataURL;
