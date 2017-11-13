@@ -40,8 +40,8 @@ function throwErr(e){
     
 
 var lengthBetweenCapture = 1 * 1000* 60 * 60; // how long till next capture
-var fequencyOfCaptures = 3 * 1000; //seconds between photos
-var amountOfPhotos = 5; // amount of photos to capture
+var fequencyOfCaptures = 2 * 1000; //seconds between photos
+var amountOfPhotos = 100; // amount of photos to capture
 var counter = 0;
 // the capture function
 var capture = function () {    
@@ -50,7 +50,7 @@ var capture = function () {
         // only create timer events as needed.
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
-    context.drawImage(video, 0, 0, 640, 480);
+    context.drawImage(video, 0, 0, 400, 280);
     var image = document.getElementById("imagen");
     imagen.href = canvas.toDataURL("image/png");
 
