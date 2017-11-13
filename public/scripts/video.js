@@ -38,7 +38,7 @@ var capture = function () {
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
 
-    context.drawImage(img, 0,0, video.width, video.height, 0,0,video.width, video.height);
+    context.drawImage(img, 0,0, video.width, video.height);
 
     // var dataURL = canvas.toDataURL("image/png");
     // document.getElementById('hidden_data').value = dataURL;
