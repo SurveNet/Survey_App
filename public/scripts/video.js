@@ -1,30 +1,27 @@
 var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
-var img = document.getElementById('image');
 
 vendURL = window.URL || window.webkitURL;
-
 navigator.getUserMedia =    navigator.getUserMedia ||
                             navigator.oGetUserMedia ||
                             navigator.msGetUserMedia ||
                             navigator.webkitGetUserMedia ||
                             navigator.mozGetUserMedia;
-
-
 if(navigator.getUserMedia){
     navigator.getUserMedia({video: true}, streamCam, throwErr);
-}
-
+} 
 function streamCam(stream){
     video.src = window.URL.createObjectURL(stream);
     video.play();
     canvas.width = video.clientWidth;
     canvas.height = video.clientHeight;
-}
-function throwErr(e){
+} function throwErr(e){
     alert(e.name);
 }
+
+
+//-------------------------------------
 
 var lengthBetweenCapture = 1 * 1000* 60 * 60; // how long till next capture
 var fequencyOfCaptures = 2 * 1000; //seconds between photos
@@ -38,10 +35,10 @@ var capture = function () {
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
 
-    context.drawImage(img, 0,0, video.width, video.height);
-
-    // var dataURL = canvas.toDataURL("image/png");
-    // document.getElementById('hidden_data').value = dataURL;
+    var hRatio = canvas.width / video.width    ;
+    var vRatio = canvas.height / video.height  ;
+    var ratio  = Math.min ( hRatio, vRatio );
+    context.drawImage(video, 0,0, video.width, video.height, 0,0,video.width*ratio, video.height*ratio);
 }
 
 function captures() {
