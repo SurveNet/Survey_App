@@ -40,7 +40,7 @@ var capture = function () {
         // only create timer events as needed.
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
-    context.drawImage(video, 0, 0);
+    context.drawImage(video, 0, 0, video.width, video.height, 0, 0, canvas.width, canvas.height);
     // var image = document.getElementById("imagen");
     // imagen.href = canvas.toDataURL("image/png");
 
