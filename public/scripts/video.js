@@ -38,8 +38,8 @@ var capture = function () {
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
     context.drawImage(video, 0, 0, 400, 400);
-    var image = document.getElementById("imagen");
-    imagen.href = canvas.toDataURL("image/png");
+    // var image = document.getElementById("imagen");
+    // imagen.href = canvas.toDataURL("image/png");
 
     var now = new Date();
     var filename = formatNumber(now.getHours()) + "-" + formatNumber(now.getMinutes()) + "-" + formatNumber(now.getSeconds());
