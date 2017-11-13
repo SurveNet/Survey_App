@@ -26,14 +26,6 @@ function throwErr(e){
     alert(e.name);
 }
 
-// function button(){
-//     canvas.width = video.clientWidth;
-//     canvas.height = video.clientHeight;
-//     canvas.drawImage(video, 0, 0);
-// }
-
-    
-
 var lengthBetweenCapture = 1 * 1000* 60 * 60; // how long till next capture
 var fequencyOfCaptures = 2 * 1000; //seconds between photos
 var amountOfPhotos = 100; // amount of photos to capture
