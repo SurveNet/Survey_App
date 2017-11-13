@@ -57,7 +57,7 @@ var capture = function () {
     var now = new Date();
     var filename = formatNumber(now.getHours()) + "-" + formatNumber(now.getMinutes()) + "-" + formatNumber(now.getSeconds());
 
-    imagen.download = filename + ".png"; // Make sure the browser downloads the image
+    // imagen.download = filename + ".png"; // Make sure the browser downloads the image
     imagen.click(); // Trigger the click
 
     var img = document.getElementById("img").src=filename + ".png";
