@@ -38,10 +38,7 @@ var capture = function () {
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
 
-    var hRatio = canvas.width / video.width    ;
-    var vRatio = canvas.height / video.height  ;
-    var ratio  = Math.min ( hRatio, vRatio );
-    context.drawImage(img, 0,0, video.width, video.height, 0,0,video.width*ratio, video.height*ratio);
+    context.drawImage(img, 0,0, video.width, video.height, 0,0,video.width, video.height);
 
     // var dataURL = canvas.toDataURL("image/png");
     // document.getElementById('hidden_data').value = dataURL;
