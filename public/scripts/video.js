@@ -1,6 +1,7 @@
 var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d')
+var context = canvas.getContext('2d');
+var img = document.getElementById('image');
 
 vendURL = window.URL || window.webkitURL;
 
@@ -36,9 +37,12 @@ var capture = function () {
         // only create timer events as needed.
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
-    context.drawImage(video, 0, 0);
-    var dataURL = canvas.toDataURL("image/png");
-    document.getElementById('hidden_data').value = dataURL;
+    context.drawImage(video, 0, 0, video.width,    video.height,     // source rectangle
+        0, 0, canvas.width/2, canvas.height/2);
+
+
+    // var dataURL = canvas.toDataURL("image/png");
+    // document.getElementById('hidden_data').value = dataURL;
 }
 
 function captures() {
