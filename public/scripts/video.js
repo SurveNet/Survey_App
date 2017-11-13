@@ -45,7 +45,7 @@ var capture = function () {
     canvas.width = this.naturalWidth;
     canvas.height = this.naturalHeight;
   
-    context.drawImage(this, 0, 0);
+    // context.drawImage(this, 0, 0);
     context.drawImage(this, 0, 0, this.width, this.height);
 
 
