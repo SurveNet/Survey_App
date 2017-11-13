@@ -13,7 +13,7 @@ if (!config.TENSORPORT_TOKEN) {
 	throw new Error('You are missing a tensorport access token');
 }
 
-
+//Set port to 5000 or an evironmentally allocated port
 app.set('port', (process.env.PORT || 5000))
 
 //serve static files in the public directory
@@ -32,9 +32,7 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/public/html/index.html'));
 })
 
-
-//*************************************** */
 var server = app.listen(app.get('port'), function () {
     var host = server.address().address
-	console.log('Application running at http://%s:%s', host, ' on port', app.get('port'))
+	console.log('Application running on port', app.get('port'))
 })
