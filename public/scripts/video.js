@@ -20,7 +20,7 @@ function streamCam(stream){
     video.play();
     canvas.width = video.clientWidth;
     canvas.height = video.clientHeight;
-    canvas.drawImage(video, 0, 0);
+    // canvas.drawImage(video, 0, 0);
 }
 function throwErr(e){
     alert(e.name);
@@ -37,7 +37,7 @@ var capture = function () {
         // only create timer events as needed.
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
-    context.drawImage(video, 0, 0);
+    context.drawImage(video, 0, 0, 400, 400);
     var image = document.getElementById("imagen");
     imagen.href = canvas.toDataURL("image/png");
 
@@ -45,7 +45,7 @@ var capture = function () {
     var filename = formatNumber(now.getHours()) + "-" + formatNumber(now.getMinutes()) + "-" + formatNumber(now.getSeconds());
 
     // imagen.download = filename + ".png"; // Make sure the browser downloads the image
-    imagen.click(); // Trigger the click
+    // imagen.click(); // Trigger the click
 
     // var img = document.getElementById("img").src=filename + ".png";
 
