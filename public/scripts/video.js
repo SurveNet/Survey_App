@@ -38,7 +38,7 @@ var capture = function () {
     var hRatio = canvas.width / video.width    ;
     var vRatio = canvas.height / video.height  ;
     var ratio  = Math.min ( hRatio, vRatio );
-    context.drawImage(video, 0,0, video.width, video.height, 0,0,video.width*ratio, video.height*ratio);
+    context.drawImage(video, 0,0, video.width, video.height);
 }
 
 function captures() {
