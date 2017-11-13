@@ -1,6 +1,6 @@
 var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
+var context = canvas.getContext('2d')
 
 vendURL = window.URL || window.webkitURL;
 navigator.getUserMedia =    navigator.getUserMedia ||
@@ -8,20 +8,26 @@ navigator.getUserMedia =    navigator.getUserMedia ||
                             navigator.msGetUserMedia ||
                             navigator.webkitGetUserMedia ||
                             navigator.mozGetUserMedia;
+
 if(navigator.getUserMedia){
     navigator.getUserMedia({video: true}, streamCam, throwErr);
-} 
+}
+
 function streamCam(stream){
     video.src = window.URL.createObjectURL(stream);
     video.play();
     canvas.width = video.clientWidth;
     canvas.height = video.clientHeight;
-} function throwErr(e){
+    canvas.drawImage(video, 0, 0);
+}
+
+function throwErr(e){
     alert(e.name);
 }
 
 
-//-------------------------------------
+/***********************/
+
 
 var lengthBetweenCapture = 1 * 1000* 60 * 60; // how long till next capture
 var fequencyOfCaptures = 2 * 1000; //seconds between photos
@@ -34,11 +40,18 @@ var capture = function () {
         // only create timer events as needed.
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
+    context.drawImage(video, 0, 0);
+    // var image = document.getElementById("imagen");
+    // imagen.href = canvas.toDataURL("image/png");
 
-    var hRatio = canvas.width / video.width    ;
-    var vRatio = canvas.height / video.height  ;
-    var ratio  = Math.min ( hRatio, vRatio );
-    context.drawImage(video, 0,0, video.width, video.height);
+    // var now = new Date();
+    // var filename = formatNumber(now.getHours()) + "-" + formatNumber(now.getMinutes()) + "-" + formatNumber(now.getSeconds());
+
+    // imagen.download = filename + ".png"; // Make sure the browser downloads the image
+    // imagen.click(); // Trigger the click
+
+    // var img = document.getElementById("img").src=filename + ".png";
+
 }
 
 function captures() {
