@@ -1,8 +1,6 @@
 var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d')
-var image = new Image(60, 45);
-image.onload = capture;
 
 vendURL = window.URL || window.webkitURL;
 navigator.getUserMedia =    navigator.getUserMedia ||
@@ -20,7 +18,6 @@ function streamCam(stream){
     video.play();
     canvas.width = video.clientWidth;
     canvas.height = video.clientHeight;
-    // canvas.drawImage(video, 0s, 0);
 }
 
 function throwErr(e){
@@ -42,26 +39,15 @@ var capture = function () {
         // only create timer events as needed.
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
-
-    canvas.width = this.naturalWidth;
-    canvas.height = this.naturalHeight;
-  
     // context.drawImage(this, 0, 0);
-    context.drawImage(this, 0, 0, this.width, this.height);
+    context.drawImage(video, 0, 0, 640, 480, 0, 0, 640, 480);
 
 
     // context.drawImage(video, 0, 0, video.width, video.height, 0, 0, canvas.width, canvas.height);
     // var image = document.getElementById("imagen");
     // imagen.href = canvas.toDataURL("image/png");
-
-    // var now = new Date();
-    // var filename = formatNumber(now.getHours()) + "-" + formatNumber(now.getMinutes()) + "-" + formatNumber(now.getSeconds());
-
     // imagen.download = filename + ".png"; // Make sure the browser downloads the image
     // imagen.click(); // Trigger the click
-
-    // var img = document.getElementById("img").src=filename + ".png";
-
 }
 
 function captures() {
