@@ -20,7 +20,7 @@ function streamCam(stream){
     video.play();
     canvas.width = video.clientWidth;
     canvas.height = video.clientHeight;
-    // canvas.drawImage(video, 0, 0);
+    canvas.drawImage(video, 0, 0);
 }
 function throwErr(e){
     alert(e.name);
