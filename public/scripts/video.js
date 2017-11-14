@@ -39,8 +39,7 @@ var capture = function () {
     if(counter < amountOfPhotos){ 
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
-
-    var snapshotCount = document.getElementById('count').src="Snapshot: " + counter.toString;
+    document.getElementById('count').innerHTML = "Snapshot: " + counter.toString;
     context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
 
     var image = document.getElementById("imagen");
