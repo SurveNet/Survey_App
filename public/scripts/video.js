@@ -2,7 +2,7 @@ var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-const request = require('request');
+// const request = require('request');
 
 vendURL = window.URL || window.webkitURL;
 navigator.getUserMedia =    navigator.getUserMedia ||
@@ -29,7 +29,6 @@ function throwErr(e){
 
 /***********************/
 
-var snapshotCount = document.getElementById('count');
 var lengthBetweenCapture = 1 * 1000* 60 * 60; // how long till next capture
 var fequencyOfCaptures = 2 * 1000; //seconds between photos
 var amountOfPhotos = 100; // amount of photos to capture
@@ -41,8 +40,7 @@ var capture = function () {
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
 
-    snapshotCount.setAttribute().src=counter;
-
+    var snapshotCount = document.getElementById('count').src=counter;
     context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
 
     var image = document.getElementById("imagen");
