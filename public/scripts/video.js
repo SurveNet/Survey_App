@@ -1,6 +1,7 @@
 var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d')
+var image = document.getElementById('source');
 
 vendURL = window.URL || window.webkitURL;
 navigator.getUserMedia =    navigator.getUserMedia ||
@@ -40,7 +41,7 @@ var capture = function () {
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
     // context.drawImage(this, 0, 0);
-    context.drawImage(video, 0, 0, 640, 480, 0, 0, 640, 480);
+    context.drawImage(image, 0, 0, 300, 227, 0, 0, 300, 227);
 
 
     // context.drawImage(video, 0, 0, video.width, video.height, 0, 0, canvas.width, canvas.height);
