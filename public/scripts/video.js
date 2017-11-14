@@ -1,7 +1,6 @@
 var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d')
-var image = new Image(60, 45);
 
 vendURL = window.URL || window.webkitURL;
 navigator.getUserMedia =    navigator.getUserMedia ||
@@ -36,23 +35,14 @@ var counter = 0;
 // the capture function
 var capture = function () {    
     counter = counter + 1;
-    if(counter < amountOfPhotos){  // do we need more images?
-        // only create timer events as needed.
+    if(counter < amountOfPhotos){ 
         setTimeout(capture, fequencyOfCaptures); //set time till next image
     }
+    context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
 
-    canvas.width = this.naturalWidth;
-    canvas.height = this.naturalHeight;
-
-    context.drawImage(this, 0, 0);
-    context.drawImage(this, 0, 0, this.width, this.height);
-
-
-    // context.drawImage(video, 0, 0, video.width, video.height, 0, 0, canvas.width, canvas.height);
     // var image = document.getElementById("imagen");
     // imagen.href = canvas.toDataURL("image/png");
     // imagen.download = filename + ".png"; // Make sure the browser downloads the image
-    // imagen.click(); // Trigger the click
 }
 
 function captures() {
