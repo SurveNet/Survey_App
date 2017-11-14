@@ -6,6 +6,7 @@ body{
 .booth{
     margin: 0 auto;
     font-family: Cambria;
+    display: flex;
 }
 
 .canvas{
