@@ -37,9 +37,19 @@ app.get("/test1", function (req, res) {
 		url: config.PREDICTION_API,
 		method: 'POST'
 	}
+
+	var response = null;
 	request(options, function(error, res, body){
-			console.log(body.result);
+			if(error){
+				console.log('error occured')
+			}
+			else{
+
+			}
+			console.log('From app.js', body.result);
+			response = body.result;
 	})
+	res.send(response);
 });
 
 /*******************************/
