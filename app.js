@@ -42,7 +42,7 @@ app.get('/', function (req, res) {
 			}
 			else{
 				body = JSON.parse(body);
-				console.log('\x1b[36m','Model classification response: ', body.result,, '\x1b[0m');	
+				console.log('\x1b[36m','Model classification response: ', body.result,'\x1b[0m');	
 			}
 	})
 })
