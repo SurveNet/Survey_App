@@ -5,7 +5,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const app = express();
-var router = express.Router();
 var path = require('path')
 
 
@@ -33,11 +32,7 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/public/html/index.html'));
 })
 /*******************************/
-router.get("/test1", function (req, res) {
-    makePrediction();
-});
-
-function makePrediction(){
+app.get("/test1", function (req, res) {
 	options = {
 		url: config.PREDICTION_API,
 		method: 'POST'
@@ -45,7 +40,7 @@ function makePrediction(){
 	request(options, function(error, res, body){
 			console.log(body.result);
 	})
-}
+});
 
 /*******************************/
 
