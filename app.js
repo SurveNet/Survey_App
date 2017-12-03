@@ -41,6 +41,8 @@ app.get('/', function (req, res) {
 				console.log('error occured')
 			}
 			else{
+				console.log('\x1b[36m', body, '\x1b[0m')
+
 				console.log('Model classification response', body.result);	
 			}
 	})
