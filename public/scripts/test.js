@@ -1,11 +1,8 @@
-
-document.getElementById("testbutton").onclick = doSomething;
-
-function doSomething(){
-
-    const app = require('../../app.js');    
-    console.log(typeof app);
-    app.predict;
-}
+$('#button1').click(function(){
+    console.log('button clicked');
+    $.ajax({url: 'test1', success:function(res){
+        console.log('server response is', res);
+    }});
+});
 
 
