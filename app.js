@@ -31,8 +31,7 @@ app.use(bodyParser.json())
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/public/html/index.html'));
 
-
-	options = {
+	var options = {
 		url: config.CLASSIFICATION_API,
 		method: 'POST'
 	}
