@@ -1,15 +1,12 @@
 body{
     background-color: rgb(153, 153, 153)
 }
-
-
 .booth{
     margin: 0 auto;
     font-family: Cambria;
     display: flex;
     position: absolute;    
 }
-
 .canvas{
     width: 480px;
     height: 320px;
