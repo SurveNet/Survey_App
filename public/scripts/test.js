@@ -1,5 +1,5 @@
 const app = require('../../app.js');
 
-document.getElementById("testbutton").onclick = function () {
-    app.predict;
-};
+document.getElementById("testbutton").onclick = app.predict;
+
+
