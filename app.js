@@ -31,8 +31,36 @@ app.use(bodyParser.json())
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/public/html/index.html'));
 })
+/*******************************/
+
+function getPrediction(){
+
+	options = {
+		url: config.PREDICTION_API,
+		method: 'POST'
+	}
+
+	request(options, function(error, res, body){
+
+			console.log(body.result);
+
+	})
+
+}
+
+
+
+
+
+
+
+
+/*******************************/
 
 var server = app.listen(app.get('port'), function () {
     var host = server.address().address
 	console.log('Application running on port', app.get('port'))
 })
+
+
+
