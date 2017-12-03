@@ -30,30 +30,24 @@ app.use(bodyParser.json())
 // Index route -- HTML WILL GO HERE
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/public/html/index.html'));
-})
-/*******************************/
-app.get("/test1", function (req, res) {
+
+
 	options = {
-		url: config.PREDICTION_API,
+		url: config.CLASSIFICATION_API,
 		method: 'POST'
 	}
-
-	var response = null;
+	//Make sure the API works
 	request(options, function(error, res, body){
 			if(error){
 				console.log('error occured')
 			}
 			else{
-
+				console.log('Model classification response', body.result);	
 			}
-			console.log('From app.js', body.result);
-			response = body.result;
 	})
-	res.send(response);
-});
+})
 
 /*******************************/
-
 var server = app.listen(app.get('port'), function () {
     var host = server.address().address
 	console.log('Application running on port', app.get('port'))

@@ -42,8 +42,8 @@ var capture = function () {
     document.getElementById('count').innerHTML = "Snapshot: " + counter.toString();
     context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
 
-    var image = document.getElementById("imagen");
-    imagen.href = canvas.toDataURL("image/png");
+    // var image = document.getElementById("imagen");
+    // imagen.href = canvas.toDataURL("image/png");
 }
 
 function captures() {
