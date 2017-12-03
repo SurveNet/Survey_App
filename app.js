@@ -33,27 +33,18 @@ app.get('/', function (req, res) {
 })
 /*******************************/
 
-function getPrediction(){
-
-	options = {
-		url: config.PREDICTION_API,
-		method: 'POST'
-	}
-
-	request(options, function(error, res, body){
-
-			console.log(body.result);
-
-	})
-
-}
-
-
-
-
-
-
-
+module.exports = {
+	predict: function (){
+		
+			options = {
+				url: config.PREDICTION_API,
+				method: 'POST'
+			}
+			request(options, function(error, res, body){
+					console.log(body.result);
+			})
+		}
+  };
 
 /*******************************/
 
