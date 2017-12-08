@@ -55,10 +55,17 @@ var capture = function () {
         url:  "https://model-serve.herokuapp.com/model",
         data: img,
         success: function(data){
-            console.log('successful post to model api');
-            $('#result').text('Emotion Detected: '+data);
-            console.log('Emotion Detected: ' + data)
+            // console.log('successful post to model api');
+            // $('#result').text('Emotion Detected: '+data);
+            // console.log('Emotion Detected: ' + data)
         }
+    }).done(function(data){
+        console.log('successful post to model api');
+        $('#result').text('Emotion Detected: '+data);
+        console.log('Emotion Detected: ' + data)
+    }).fail(function(xhr, textStatus, errorThrown) {
+        alert(xhr.responseText);
+        alert(textStatus);
     });
 }
 
