@@ -50,10 +50,6 @@ var capture = function () {
     document.getElementById('count').innerHTML = "Snapshot: " + counter.toString();
     context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
 
-    // var image = document.getElementById("imagen");
-    // imagen.href = canvas.toDataURL("image/png");
-
-    // const config = require('../../config');
     var canvasObj = document.getElementById("canvas");
     var img = canvasObj.toDataURL();
     $.ajax({
@@ -66,10 +62,6 @@ var capture = function () {
             console.log('Emotion Detected: ' + data)
         }
     });
-
-
-
-
 }
 
 function captures() {
