@@ -59,16 +59,14 @@ var capture = function () {
         data: img,
         success: function(data){
             console.log('successful post to model api');
-            $('#result').text('Emotion Detected: '+data);
+            $('#h1').text('Emotion Detected: '+data);
             console.log('Emotion Detected: ' + data)
         }
     }).done(function(data){
         console.log('successful post to model api');
-        // $('#result').text('Emotion Detected: '+data);
-        // console.log('Emotion Detected: ' + data)
+        $('h1').text('Emotion Detected: '+data);        
     }).fail(function(xhr, textStatus, errorThrown) {
-        console.log(xhr.responseText);
-        console.log(textStatus);
+        $('h1').text('Emotion Detected: '+ xhr.responseText);
     });
 }
 
