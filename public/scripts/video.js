@@ -53,19 +53,22 @@ var capture = function () {
     $.ajax({
         type: "POST",
         url:  "https://model-serve.herokuapp.com/model",
+        headers: { 'Access-Control-Allow-Origin': '*' },
+        contentType : 'application/json',
+        dataType : 'json',
         data: img,
         success: function(data){
-            // console.log('successful post to model api');
-            // $('#result').text('Emotion Detected: '+data);
-            // console.log('Emotion Detected: ' + data)
+            console.log('successful post to model api');
+            $('#result').text('Emotion Detected: '+data);
+            console.log('Emotion Detected: ' + data)
         }
     }).done(function(data){
         console.log('successful post to model api');
-        $('#result').text('Emotion Detected: '+data);
-        console.log('Emotion Detected: ' + data)
+        // $('#result').text('Emotion Detected: '+data);
+        // console.log('Emotion Detected: ' + data)
     }).fail(function(xhr, textStatus, errorThrown) {
-        alert(xhr.responseText);
-        alert(textStatus);
+        console.log(xhr.responseText);
+        console.log(textStatus);
     });
 }
 
