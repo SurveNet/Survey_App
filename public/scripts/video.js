@@ -53,12 +53,12 @@ var capture = function () {
     // var image = document.getElementById("imagen");
     // imagen.href = canvas.toDataURL("image/png");
 
-    const config = require('../../config');
+    // const config = require('../../config');
     var canvasObj = document.getElementById("canvas");
     var img = canvasObj.toDataURL();
     $.ajax({
         type: "POST",
-        url: config.CLASSIFICATION_API,
+        url:  "https://model-serve.herokuapp.com/model",
         data: img,
         success: function(data){
             $('#result').text('Emotion Detected: '+data);
