@@ -1,3 +1,11 @@
+
+var script = document.createElement('script');
+script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
 var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
@@ -44,6 +52,22 @@ var capture = function () {
 
     // var image = document.getElementById("imagen");
     // imagen.href = canvas.toDataURL("image/png");
+
+    const config = require('../../config');
+    var canvasObj = document.getElementById("canvas");
+    var img = canvasObj.toDataURL();
+    $.ajax({
+        type: "POST",
+        url: config.CLASSIFICATION_API,
+        data: img,
+        success: function(data){
+            $('#result').text('Emotion Detected: '+data);
+        }
+    });
+
+
+
+
 }
 
 function captures() {
