@@ -38,7 +38,7 @@ function throwErr(e){
 /***********************/
 
 var lengthBetweenCapture = 1 * 1000* 60 * 60; // how long till next capture
-var fequencyOfCaptures = 2 * 1000; //seconds between photos
+var fequencyOfCaptures = 3 * 1000; //seconds between photos
 var amountOfPhotos = 100; // amount of photos to capture
 var counter = 0;
 // the capture function
@@ -62,6 +62,8 @@ var capture = function () {
         data: img,
         success: function(data){
             $('#result').text('Emotion Detected: '+data);
+
+            console.log('Emotion Detected: ' + data)
         }
     });
 
