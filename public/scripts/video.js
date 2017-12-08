@@ -4,8 +4,6 @@ script.src = 'https://code.jquery.com/jquery-1.11.0.min.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
-
-
 var video = document.getElementById('video');
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
@@ -57,8 +55,8 @@ var capture = function () {
         url:  "https://model-serve.herokuapp.com/model",
         data: img,
         success: function(data){
+            console.log('successful post to model api');
             $('#result').text('Emotion Detected: '+data);
-
             console.log('Emotion Detected: ' + data)
         }
     });

@@ -23,10 +23,6 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }))
 
-
-
-
-
 //Process application/json
 app.use(bodyParser.json())
  
@@ -45,25 +41,6 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/public/html/index.html'));
 
 })
-
-// app.get('/test', function(req, res){
-
-// 	var options = {
-// 		url: config.CLASSIFICATION_API,
-// 		method: 'POST',
-// 		data : imageBase64
-// 	}
-// 	//Make sure the API works
-// 	request(options, function(error, res, body){
-// 			if(error){
-// 				console.log('error occured')
-// 			}
-// 			else{
-// 				body = JSON.parse(body);
-// 				console.log('\x1b[36m','Model classification response: ', body.result,'\x1b[0m');	
-// 			}
-// 	})
-// })
 
 /*******************************/
 var server = app.listen(app.get('port'), function () {
