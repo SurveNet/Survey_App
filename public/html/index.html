@@ -1,40 +1,165 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Survernet sample app</title>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!--<script src="script.js"></script>-->
-<link rel="stylesheet" href="../styles/styles.css">
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/video.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style/styles.css">
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <meta name="viewport" content="height=device-height,width=device-width,maximum-scale=0.5" >
 </head>
 <body>
-<div>
-<nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="https://github.com/SurveNet/Tensor_Training/blob/master/README.md">Read Me</a></li>
-        <li><a href="https://github.com/SurveNet">GitHub</a></li>
-    </ul>
-</nav>
+
+<!------- Main Page - DONE -------->
+<div class="body" data-role="page" id="page1">
+    <div data-role="header">
+        <h1>ITB mobile app</h1>
+    </div>
+    <div class="header"></div>
+    <div data-role="main" class="ui-content" id="main">
+        <img id="banner" src="http://www.itb.ie/heanet/home/campus-night.jpg" >
+        <div data-role="collapsible" id="dropdown">
+            <h1>Quick links</h1>
+            <ul data-role="listview">
+                <li><a href="#page2">Courses</a></li>
+                <li><a href="#page5">Log In</a></li>
+                <li><a href="#page7">Google Maps</a></li>
+                <li><a href="#page8">Campus Map</a></li>
+                <li><a href="#page9">Flickr Feed</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="footer"  data-position="fixed">
+        <h2>Aaron Ward - B00079288</h2>
+    </div>
 </div>
 
-<br/>
-    <div id="booth">
-        <video id="video"></video>
-        <canvas id="canvas"></canvas>
-        <p id="count"></p>
-        <script src="../scripts/video.js"></script>
-        <h1 id="result" style="margin-right:20px; margin-top:300px;float:left;"><span> </span></h1>        
+<!------- Courses -------->
+<div class="body" data-role="page" id="page2">
+    <div data-role="header">
+        <button data-icon="back" onclick= window.history.back()>Back</button>
+        <h1>ITB mobile app</h1>
     </div>
+    <div class="header"></div>
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsible" data-collapsed="false"  data-collapsed-icon="false" data-expanded-icon="false" id="parentcollapsible">
+            <h1>Courses</h1>
+            <div data-role="collapsible" id="courseDropDown"></div>
+        </div>
+    </div>
+    <div data-role="footer"  data-position="fixed">
+        <h2>Aaron Ward - B00079288</h2>
+    </div>
+</div>
 
-
-
+<!-- log in or rigister -->
+<div class="body" data-role="page" id="page3">
+    <div data-role="header">
+        <button data-icon="back" onclick= window.history.back()>Back</button>
+        <h1>ITB mobile app</h1>
+    </div>
+    <div class="header"></div>
+    <div data-role="main" class="ui-content" >
+    </div>
+    <div data-role="footer"  data-position="fixed">
+        <h2>Aaron Ward - B00079288</h2>
+    </div>
+</div>
+<!-- ---- Register -- -->
+<!-- ---- Log In ------- -->
+<div class="body" data-role="page" id="page5">
+    <div data-role="header">
+        <button data-icon="back" onclick= window.history.back()>Back</button>
+        <h1>ITB mobile app</h1>
+    </div>
+    <div class="header"></div>
+    <div data-role="main" class="ui-content">
+    </div>
+    <div data-role="footer"  data-position="fixed">
+        <h2>Aaron Ward - B00079288</h2>
+    </div>
+</div>
+<!------ profile ----->
+<!------  Google Maps - DONE ---------->
+<div class="body" data-role="page" id="page7">
+    <div data-role="header">
+        <button data-icon="back" onclick= window.history.back()>Back</button>
+        <h1>ITB mobile app</h1>
+    </div>
+    <div class="header"></div>
+    <div data-role="main" class="ui-content">
+        <p class="heading">Google Maps</p>
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA6-F3tNkYd0mNwYXIjLks2LyTwS7TEyA&callback=loadMap">
+        </script>
+    </div>
+    <div data-role="footer"  data-position="fixed">
+        <h2>Aaron Ward - B00079288</h2>
+    </div>
+</div>
+<!-- -----  Campus Map - DONE ------- -->
+<div class="body" data-role="page" id="page8">
+    <div data-role="header">
+        <button data-icon="back" onclick= window.history.back()>Back</button>
+        <h1>ITB mobile app</h1>
+    </div>
+    <div class="header"></div>
+    <div data-role="main" class="ui-content">
+        <p class="heading">Campus Map</p>
+        <div id="content">
+            <img src="http://2.bp.blogspot.com/-ySm-Du-LLF4/Ubcn6Nvjc3I/AAAAAAAAABM/y9KQE39Pb9M/s1600/campus_map.gif" id="mapImage">
+            <div id="fullButton"></div>
+            <div id="populate" >
+                <a href="#" class="ui-btn" style="background: #34495e; color: white;" id="a">Aontas</a>
+                <a href="#" class="ui-btn" style="background: #34495e; color: white;" id="c">Croi</a>
+                <a href="#" class="ui-btn" style="background: #34495e; color: white;" id="d">Doras</a>
+                <a href="#" class="ui-btn" style="background: #34495e; color: white;" id="e">Eolas</a>
+                <a href="#" class="ui-btn" style="background: #34495e; color: white;" id="f">Fios</a>
+                <a href="#" class="ui-btn" style="background: #34495e; color: white;" id="linc">Buntus/Linc</a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div data-role="footer"  data-position="fixed">
+        <h2>Aaron Ward - B00079288</h2>
+    </div>
+</div>
+<!------ Flickr - DONE -------->
+<div class="body" data-role="page" id="page9">
+    <div data-role="header">
+        <button data-icon="back" onclick= window.history.back()>Back</button>
+        <h1>ITB mobile app</h1>
+    </div>
+    <div class="header"></div>
+    <div data-role="main" class="ui-content">
+        <a href="#" class="ui-btn" onclick="showPics()" style="background: #34495e; color: white;" id="picButton">Feed me pics</a>
+        <div id="imageFeed"></div>
+    </div>
+    <div data-role="footer"  data-position="fixed">
+        <a href="#" id="backToTop" class="ui-btn ui-btn-inline" style="background: #34495e; color: white;">Back to the top</a>
+        <h2>Aaron Ward - B00079288</h2>
+    </div>
+</div>
+ <!--Clubs and Societies -->
+<div class="body" data-role="page" id="page10">
+    <div data-role="header">
+        <button data-icon="back" onclick= window.history.back()>Back</button>
+        <h1>ITB mobile app</h1>
+    </div>
+    <div class="header"></div>
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsible" data-collapsed="false"  data-collapsed-icon="false" data-expanded-icon="false" id="parentcollapsible2">
+            <h1>Clubs and Societies</h1>
+            <div data-role="collapsible-set" id="clubDropDown"></div>
+        </div>
+    </div>
+    <div data-role="footer"  data-position="fixed">
+        <h2>Aaron Ward - B00079288</h2>
+    </div>
+</div>
 
 </body>
 </html>

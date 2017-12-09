@@ -48,26 +48,26 @@ var capture = function () {
     document.getElementById('count').innerHTML = "Snapshot: " + counter.toString();
     context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
 
-    var canvasObj = document.getElementById("canvas");
-    var img = canvasObj.toDataURL();
-    $.ajax({
-        type: "POST",
-        url:  "https://model-serve.herokuapp.com/model",
-        headers: { 'Access-Control-Allow-Origin': '*' },
-        contentType : 'application/json',
-        dataType : 'json',
-        data: img,
-        success: function(data){
-            console.log('successful post to model api');
-            $('#h1').text('Emotion Detected: '+data);
-            console.log('Emotion Detected: ' + data)
-        }
-    }).done(function(data){
-        console.log('successful post to model api');
-        $('h1').text('Emotion Detected: '+data);        
-    }).fail(function(xhr, textStatus, errorThrown) {
-        $('h1').text('Emotion Detected: '+ xhr.responseText);
-    });
+//     var canvasObj = document.getElementById("canvas");
+//     var img = canvasObj.toDataURL();
+//     $.ajax({
+//         type: "POST",
+//         url:  "https://model-serve.herokuapp.com/model",
+//         headers: { 'Access-Control-Allow-Origin': '*' },
+//         contentType : 'application/json',
+//         dataType : 'json',
+//         data: img,
+//         success: function(data){
+//             console.log('successful post to model api');
+//             $('#h1').text('Emotion Detected: '+data);
+//             console.log('Emotion Detected: ' + data)
+//         }
+//     }).done(function(data){
+//         console.log('successful post to model api');
+//         $('h1').text('Emotion Detected: '+data);        
+//     }).fail(function(xhr, textStatus, errorThrown) {
+//         $('h1').text('Emotion Detected: '+ xhr.responseText);
+//     });
 }
 
 function captures() {
@@ -78,4 +78,3 @@ function captures() {
 }
 // start captures.
 captures();
-
