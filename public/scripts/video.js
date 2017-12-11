@@ -70,6 +70,7 @@ $(document).ready(function() {
             $('h1').text('Emotion Detected: '+data);        
         }).fail(function(xhr, textStatus, errorThrown) {
             $('h1').text('Emotion Detected: '+ xhr.responseText);
+            console.log('Emotion Detected: '+ xhr.responseText);
         });
     }
     
