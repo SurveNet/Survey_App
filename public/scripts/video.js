@@ -55,8 +55,9 @@ $(document).ready(function() {
 
 
     
-        var canvasObj = document.getElementById(context);
+        var canvasObj = video
         img = canvasObj.toDataURL();
+
         $.ajax({
             type: "POST",
             url:  "https://model-serve.herokuapp.com/model",
