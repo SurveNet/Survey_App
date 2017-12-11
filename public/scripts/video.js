@@ -49,17 +49,14 @@ $(document).ready(function() {
             setTimeout(capture, fequencyOfCaptures); //set time till next image
         }
         document.getElementById('count').innerHTML = "Snapshot: " + counter.toString();
-        context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 480, 320);
+        context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
     
         var img = null;
 
 
     
-        var canvasObj = document.getElementById("canvas");
+        var canvasObj = document.getElementById(video);
         img = canvasObj.toDataURL();
-
-        console.log(img)
-    
         $.ajax({
             type: "POST",
             url:  "https://model-serve.herokuapp.com/model",
