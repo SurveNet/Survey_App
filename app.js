@@ -26,22 +26,17 @@ app.use(bodyParser.urlencoded({
 //Process application/json
 app.use(bodyParser.json())
  
-
-app.use(function (req, res, next) {
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-	res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
-	next();
-  });
-
-
-
-// Index route -- HTML WILL GO HERE
+/**
+ * Home page for interval captures
+ */
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/public/html/index.html'));
 
 })
 
+/**
+ * For taking individual captures
+ */
 app.get('/snapshot', function (req, res) {
 	res.sendFile(path.join(__dirname+'/public/html/snapshot.html'));
 
