@@ -44,11 +44,11 @@ function capture() {
         data: img,
         success: function(data){
             console.log('successful post to model api');
+            $('#h3').text('Emotion Detected: '+data);                    
         }   
     }).done(function(data){
         $('#h3').text('Emotion Detected: '+data);        
         console.log("DONE ========" + data);
-
     }).fail(function(xhr, textStatus, errorThrown) {
         if(errorThrown){
             console.log(errorThrown)

@@ -65,17 +65,15 @@ $(document).ready(function() {
             data: img,
             success: function(data){
                 console.log('successful post to model api');
-                $('#h3').text('Emotion Detected: '+data);
-                console.log('Emotion Detected: ' + data)
-            }
+            }   
         }).done(function(data){
-            console.log('successful post to model api');
-            $('h3').text('Emotion Detected: '+data);        
+            $('#h3').text('Emotion Detected: '+data);        
+            console.log("DONE ========" + data);
         }).fail(function(xhr, textStatus, errorThrown) {
-            $('h3').text('Emotion Detected: '+ xhr.responseText);
-            console.log('Emotion Detected: '+ xhr.responseText);
+            if(errorThrown){
+                console.log(errorThrown)
+            }
         });
-    }
     
     function captures() {
         // request next batch of captures by only creating one timer event as we need
