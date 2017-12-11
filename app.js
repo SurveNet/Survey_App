@@ -42,6 +42,11 @@ app.get('/', function (req, res) {
 
 })
 
+app.get('/shapshot', function (req, res) {
+	res.sendFile(path.join(__dirname+'/public/html/snapshot.html'));
+
+})
+
 /*******************************/
 var server = app.listen(app.get('port'), function () {
     var host = server.address().address

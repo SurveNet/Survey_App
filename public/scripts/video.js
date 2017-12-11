@@ -55,10 +55,7 @@ $(document).ready(function() {
         var img = null;    
         var canvasObj = document.getElementById("canvas");
         img = canvasObj.toDataURL();
-
-        console.log(img)
-        
-
+    
         $.ajax({
             type: "POST",
             url:  "https://model-serve.herokuapp.com/model",
