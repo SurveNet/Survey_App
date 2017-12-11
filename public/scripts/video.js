@@ -51,11 +51,8 @@ $(document).ready(function() {
         document.getElementById('count').innerHTML = "Snapshot: " + counter.toString();
         context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
     
-        var img = null;
-
-
-    
-        var canvasObj = video
+        var img = null;    
+        var canvasObj = document.getElementById("video");
         img = canvasObj.toDataURL();
 
         $.ajax({
