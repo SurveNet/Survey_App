@@ -55,7 +55,7 @@ $(document).ready(function() {
 
 
     
-        var canvasObj = document.getElementById(video);
+        var canvasObj = document.getElementById(context);
         img = canvasObj.toDataURL();
         $.ajax({
             type: "POST",
