@@ -51,8 +51,11 @@ $(document).ready(function() {
         document.getElementById('count').innerHTML = "Snapshot: " + counter.toString();
         context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
     
+        var img = null;
+
         var canvasObj = document.getElementById("canvas");
-        var img = canvasObj.toDataURL();
+        img = canvasObj.toDataURL();
+
         $.ajax({
             type: "POST",
             url:  "https://model-serve.herokuapp.com/model",
