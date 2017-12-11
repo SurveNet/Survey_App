@@ -52,7 +52,8 @@ function capture() {
         console.log('successful post to model api');
         $('h3').text('Emotion Detected: '+data);        
     }).fail(function(xhr, textStatus, errorThrown) {
-        $('h3').text('Emotion Detected: '+ xhr.responseText);
-        console.log('Emotion Detected: '+ xhr.responseText);
+        // $('h3').text('Emotion Detected: '+ xhr.responseText);
+        // console.log('Emotion Detected: '+ xhr.responseText);
+        console.log('balls')
     });
 }
