@@ -46,7 +46,7 @@ function capture() {
             console.log('successful post to model api');
             $('#h3').text('Emotion Detected: '+responseData);                    
         }   
-    }).done(function(data){
+    }).done(function(responseData){
         $('#h3').text('Emotion Detected: '+responseData);        
         console.log("DONE ========" + responseData);
     }).fail(function(xhr, textStatus, errorThrown) {
