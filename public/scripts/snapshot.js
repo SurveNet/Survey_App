@@ -54,6 +54,6 @@ function capture() {
     }).fail(function(xhr, textStatus, errorThrown) {
         // $('h3').text('Emotion Detected: '+ xhr.responseText);
         // console.log('Emotion Detected: '+ xhr.responseText);
-        console.log('balls')
+        console.log(errorThrown)
     });
 }
