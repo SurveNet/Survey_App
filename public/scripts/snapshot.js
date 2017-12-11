@@ -47,6 +47,10 @@ function capture() {
             $('#h3').text('Emotion Detected: '+data);
             console.log('Emotion Detected: ' + data)
         }   
+    }).done(function(data){
+    
+        console.log("DONE ========" + data.response);
+
     }).fail(function(xhr, textStatus, errorThrown) {
         if(errorThrown){
             console.log(errorThrown)
