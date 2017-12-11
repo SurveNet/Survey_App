@@ -67,7 +67,7 @@ $(document).ready(function() {
                 console.log('successful post to model api');
             }   
         }).done(function(data){
-            $('#h3').text('Emotion Detected: '+data);        
+            $('h3').text('Emotion Detected: '+data);        
             console.log("DONE ========" + data);
         }).fail(function(xhr, textStatus, errorThrown) {
             if(errorThrown){
@@ -75,7 +75,7 @@ $(document).ready(function() {
             }
         });
     }
-    
+
     function captures() {
         // request next batch of captures by only creating one timer event as we need
         setTimeout(captures,lengthBetweenCapture);

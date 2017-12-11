@@ -44,15 +44,15 @@ function capture() {
         data: img,
         success: function(responseData){
             console.log('successful post to model api');
-            $('#h3').text('Emotion Detected: '+responseData);                    
+            $('h3').text('Emotion Detected: '+responseData);                    
         }   
     }).done(function(responseData){
-        $('#h3').text('Emotion Detected: '+responseData);        
+        $('h3').text('Emotion Detected: '+responseData);        
         console.log("DONE ========" + responseData);
     }).fail(function(xhr, textStatus, errorThrown) {
         if(errorThrown){
             console.log(errorThrown)
             }
-        $('#h3').text('Emotion Detected: '+xhr);
+        // $('h3').text('Emotion Detected: '+xhr);
     });
 }
