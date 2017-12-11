@@ -1,3 +1,5 @@
+import { error } from "util";
+
 
 var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-1.11.0.min.js';
@@ -47,13 +49,10 @@ function capture() {
             console.log('successful post to model api');
             $('#h3').text('Emotion Detected: '+data);
             console.log('Emotion Detected: ' + data)
-        }
-    }).done(function(data){
-        console.log('successful post to model api');
-        $('h3').text('Emotion Detected: '+data);        
+        }   
     }).fail(function(xhr, textStatus, errorThrown) {
-        // $('h3').text('Emotion Detected: '+ xhr.responseText);
-        // console.log('Emotion Detected: '+ xhr.responseText);
-        console.log(errorThrown)
+        if(errorThrown){
+            console.log(errorThrown)
+        }
     });
 }
