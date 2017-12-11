@@ -74,6 +74,7 @@ $(document).ready(function() {
                 console.log(errorThrown)
             }
         });
+    }
     
     function captures() {
         // request next batch of captures by only creating one timer event as we need
