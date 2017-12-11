@@ -62,14 +62,14 @@ $(document).ready(function() {
             data: img,
             success: function(data){
                 console.log('successful post to model api');
-                $('#h1').text('Emotion Detected: '+data);
+                $('#h3').text('Emotion Detected: '+data);
                 console.log('Emotion Detected: ' + data)
             }
         }).done(function(data){
             console.log('successful post to model api');
-            $('h1').text('Emotion Detected: '+data);        
+            $('h3').text('Emotion Detected: '+data);        
         }).fail(function(xhr, textStatus, errorThrown) {
-            $('h1').text('Emotion Detected: '+ xhr.responseText);
+            $('h3').text('Emotion Detected: '+ xhr.responseText);
             console.log('Emotion Detected: '+ xhr.responseText);
         });
     }
