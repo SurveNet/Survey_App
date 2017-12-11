@@ -31,7 +31,7 @@ function throwErr(e){
 
 function capture() {    
     context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 600, 480);
-    var img = null;    
+    var responseData = null;    
     var canvasObj = document.getElementById("canvas");
     img = canvasObj.toDataURL();
 
@@ -42,16 +42,17 @@ function capture() {
         contentType : 'application/json',
         dataType : 'json',
         data: img,
-        success: function(data){
+        success: function(responseData){
             console.log('successful post to model api');
-            $('#h3').text('Emotion Detected: '+data);                    
+            $('#h3').text('Emotion Detected: '+responseData);                    
         }   
     }).done(function(data){
-        $('#h3').text('Emotion Detected: '+data);        
-        console.log("DONE ========" + data);
+        $('#h3').text('Emotion Detected: '+responseData);        
+        console.log("DONE ========" + responseData);
     }).fail(function(xhr, textStatus, errorThrown) {
         if(errorThrown){
             console.log(errorThrown)
-        }
+            }
+        $('#h3').text('Emotion Detected: '+xhr);
     });
 }
