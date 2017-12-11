@@ -31,10 +31,7 @@ function throwErr(e){
 }
 
 function capture() {    
-    document.getElementById('count').innerHTML = "Snapshot: " + counter.toString();
     context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 600, 480);
-
-
     var img = null;    
     var canvasObj = document.getElementById("canvas");
     img = canvasObj.toDataURL();
