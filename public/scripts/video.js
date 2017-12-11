@@ -49,7 +49,7 @@ $(document).ready(function() {
             setTimeout(capture, fequencyOfCaptures); //set time till next image
         }
         document.getElementById('count').innerHTML = "Snapshot: " + counter.toString();
-        context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 700, 480);
+        context.drawImage(video, 0, 0, 2200, 1500, 0, 0, 480, 320);
     
         var img = null;
 
