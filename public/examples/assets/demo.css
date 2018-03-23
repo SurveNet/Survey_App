@@ -1,0 +1,247 @@
+
+
+.demo-frame {
+  width: 600px;
+  height: 400px;
+  position: fixed;
+  top: 67%;
+  left: 32.5%;
+  margin: -329px 0 0 -429px;
+  padding: 0px 20px 45px 34px;
+  /* overflow: hidden; */
+
+  /* -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; */
+}
+
+.demo-container {
+  width: 80%;
+  height: 370px;
+  position: relative;
+  background: #eee;
+  box-shadow: 0 4px 10px #cccccc;
+  /* border: solid 1px black;   */
+  overflow: hidden;
+  /* border-bottom-right-radius: 10px; */
+  /* border-bottom-left-radius: 10px; */
+}
+
+.demo-frame #c2{
+  margin-top: -10px;
+  margin-left: -0px;
+  box-shadow: 0 10px 10px #cccccc;
+  width:100px;
+  height: 100px;
+}
+
+
+
+.demo-frame #image{
+  margin-top: 10px;
+}
+
+
+.init{
+  display: flex;
+  margin: 2.5px;
+  margin-left: 25px;
+}
+
+.init #record{
+  height: 20px;
+  font-size: 1.5rem; 
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #008CBA;
+  box-shadow: 0 4px 10px #cccccc;
+  
+  /* border-radius: 4px;  */
+  background-color: white;
+}
+
+.init #record:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+.init #snap-count{
+  font-size: 1.5rem;  
+  margin-left: 10px;
+}
+
+.dg.ac {
+  z-index: 100 !important;
+  top: 50px !important;
+}
+
+
+
+/***********************************/
+
+.info-frame {
+  /* background: url(frame3.png) no-repeat; */
+  /* width: 854px;
+  height: 658px; */
+  /* background-color: #a64ceb; */
+  width: 650px;
+  height: 700px;
+  position: fixed;
+  top: 52%;
+  left: 80%;
+  margin: -329px 0 0 -429px;
+  padding: 90px 20px 45px 34px;
+  overflow: hidden;
+  /* -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; */
+}
+
+.classification-container{
+  background: gray;
+  width: 100%;
+  height: 235px;
+  position: relative;
+  background: #eee;
+  box-shadow: 0 4px 10px #cccccc;
+  /* overflow: hidden; */
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+}
+
+.sentiment-table{
+  width: 270px;
+  height: 200px;
+  background-color: white;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+$color-alpha: #1772FF;
+$color-form-highlight: #EEEEEE; 
+
+*, *:before, *:after {
+	box-sizing:border-box;
+} 
+
+
+.sentiment-container {
+	max-width: 250px;
+	margin-right:auto;
+	margin-left:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:100vh;
+}
+
+.table {
+	width:100%;
+  /* border:px solid $color-form-highlight; */
+}
+
+.table-header {
+  color: white;
+	display:flex;
+	width:100%;
+	background:#000;
+	/* padding: 2.5; */
+}
+
+.table-row {
+	display:flex;
+	width:100%;
+  padding: 5px;
+}
+
+.table-data, .header__item {
+	flex: 1 1 20%;
+	text-align:center;
+}
+
+.header__item {
+	text-transform:uppercase;
+}
+
+.filter__link {
+	color:white;
+	text-decoration: none;
+	position:relative;
+	display:inline-block;
+} 
+
+.vl {
+  border-left: 1.5px solid black;
+  height: 220px;
+  position: absolute;
+  left: 52%;
+  margin-left: -3px;
+  top: 5px;
+}
+
+
+
+/********************************/
+
+.vl2 {
+  border-left: 1.5px solid black;
+  height: 190px;
+  position: absolute;
+  left: 52%;
+  margin-left: -3px;
+  top: 50px;
+}
+
+.tone-header{
+  border-bottom: 2px solid black;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display:flex;
+} 
+
+.tone-header p{
+  font-size: 2rem;
+}
+
+.tone-header img{
+  margin-top: 5px;
+  height: 2rem;
+  margin-left: 75%;
+}
+
+
+.hl{
+
+  border-left: 1px solid black;
+  width: 200px;
+  height: 100px;
+  /* position: absolute;
+  left: 40%;
+  /* margin-left: -3px; */
+  /* top: 10px; */ */
+}
+
+
+/******************************/
+.speech-container{
+  background: gray;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  background: #eee;
+  box-shadow: 0 4px 10px #cccccc;
+  overflow: hidden;
+}
+
+/******************************************/

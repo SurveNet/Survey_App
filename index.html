@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>tracking.js - face with camera</title>
+  <link rel="stylesheet" href="/examples/assets/demo.css">
+  <script src="/build/tracking-min.js"></script>
+  <script src="/build/data/face-min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  
+  <style> 
+    video, canvas {
+      margin-left: 25px;
+      margin-top: 30px;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav Bar template -->
+  <div>
+      <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+          <ul class="nav navbar-nav">
+              <li style="color:white; font-weight:700; font-size: 1.7em; font-style: italic;padding-top:5px; left: -30%;">Survenet</li>
+              <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+              <li><a href="https://github.com/SurveNet/Tensor_Training/blob/master/README.md">Read Me</a></li>
+              <li><a href="https://github.com/SurveNet">GitHub</a></li>
+          </ul>
+      </nav>
+  </div>
+
+  <div class="main-frame">
+    <!-- Frame for webcam feed -->
+    <div class="demo-frame">    
+      <div class="demo-container">
+        <video id="video" width="400" height="288" preload autoplay loop muted controls></video>
+        <canvas id="canvas" width="370" height="400"></canvas>
+          <div class="init">
+              <button id="record" onclick="record();">Record</button> 
+              <p id="snap-count"></p> 
+          </div>
+      </div>
+      <p id="distance"></p>
+      <!-- <img src="" id="image" style="width: 100px; height: 100px;"></img> -->
+      <!-- <div id="img"></div> -->
+      <canvas id="c2" style=" box-shadow: 0 0px 0px white">
+      </canvas>
+    </div> 
+
+
+<!-- Frame for information -->
+    <div class="info-frame">   
+      
+      <div class="classification-container">  
+        <div class="sentiment-contrainer">
+            <div class="sentiment-table">
+                <div class="table-header">
+                  <div class="header__item">Facial Sentiment Analysis</div>
+                </div>
+                <div class="table-content">	
+                  <div class="table-row">		
+                    <div class="table-data" style="background-color:#eeeeee; margin-top: 10px;">Anger:</div>
+                  </div>
+                  <div class="table-row">	
+                    <div class="table-data">Happiness:</div><!---->
+                  </div>
+                  <div class="table-row">	
+                    <div class="table-data" style="background-color:#eeeeee">Sadness:</div>
+                  </div>
+                  <div class="table-row">	
+                    <div class="table-data">Neutral:</div>  <!---->
+                  </div>
+                  <div class="table-row">	
+                    <div class="table-data" style="background-color:#eeeeee">Disgust:</div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vl"></div>        
+
+        <div class="metrics-contrainer">
+
+
+        </div>
+      </div>
+  
+
+      <!--  -->
+
+      <div class="speech-container">
+        
+        <div class="tone-header">
+          <p>Tone Analysis</p>
+          <img src="/examples/assets/mic.png">          
+        </div>
+                             
+        
+        <div class="detection-container"></div>
+        <div class="vl2"></div>                
+        <div class="log-container"></div>
+            
+      </div>      
+    </div>
+</div>
+
+
+<script src="../scripts/main.js"></script>
+
+</body>
+</html>
