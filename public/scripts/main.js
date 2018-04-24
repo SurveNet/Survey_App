@@ -142,8 +142,20 @@ function record(){
                     }
                  }
             });
+            total  = numAngry + numFear + numHappy + numNeutral + numSad + numSuprise
 
-                        // Change percentages of emotions detected after every image
+           
+            if(isNaN(perAngry) || isNaN(perHappy) || isNaN(perFear) || isNaN(perNeutral) || isNaN(perSad) || isNaN(perSuprise)){
+                perAngry = 0;
+                perHappy = 0;
+                perFear = 0;
+                perSad = 0;
+                perSuprise = 0;
+                perNeutral = 0;
+            }
+
+
+            // Change percentages of emotions detected after every image
             document.getElementById('angry').innerHTML = "Anger: " + perAngry + "%";
             document.getElementById('fear').innerHTML = "Fear: " + perFear + "%";
             document.getElementById('happy').innerHTML = "Happiness: " + perHappy + "%";
@@ -151,9 +163,7 @@ function record(){
             document.getElementById('sad').innerHTML = "Sadness: " + perSad + "%";
             document.getElementById('suprise').innerHTML = "Surprise: " + perSuprise + "%";
 
-            total  = numAngry + numFear + numHappy + numNeutral + numSad + numSuprise
-
-            perAngry = Math.floor((numAngry/parseInt(total)) * 100);
+            perAngry = Math.floor((numAngry/total) * 100);
             perFear = Math.floor((numFear / total) * 100);
             perHappy = Math.floor((numHappy / total) * 100);
             perNeutral = Math.floor((numNeutral / total) * 100);
