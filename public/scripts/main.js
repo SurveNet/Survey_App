@@ -103,9 +103,6 @@ var numSuprise = 0
 var numSad = 0
 var total = 1
 
-            // $('"Anger: ' + perAngry + '"%"').appendTo('#anger');
-            // Change percentages of emotions detected after every image
-
 function record(){
   /** Initialise timing variables **/
   var lengthBetweenCapture = 3 * 1000* 60 * 60; // how long till next capture
@@ -127,7 +124,8 @@ function record(){
 
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:5000/api",
+                // url: "http://127.0.0.1:5000/api",
+                url: "http://servable.herokuapp.com/api",
                 data: image, 
                 success: function(data){
                         console.log(data)
