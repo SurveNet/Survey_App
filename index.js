@@ -5,7 +5,7 @@ var path = require('path')
 const app = express();
 
 //Set port to 5000 or an evironmentally allocated port
-app.set('port', (process.env.PORT || 5000))
+app.set('port', (process.env.PORT || 3030))
 
 //serve static files in the public directory
 app.use(express.static('public'));

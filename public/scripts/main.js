@@ -14,6 +14,22 @@ var i = 0;
 
 
 window.onload = function(){
+    console.log('page LAAA...')
+    var script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js';
+    script.type = 'text/javascript';
+    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+    // var angryRow = document.getElementById('angry')
+    // var fearRow = document.getElementById('fear')
+    // var happyRow = document.getElementById('happy')
+    // var neutralRow = document.getElementById('neutral')
+    // var sadRow = document.getElementById('sad')
+    // var supriseRow = document.getElementById('suprise')
+
+
+
     video = document.getElementById('video');
     canvas = document.getElementById('canvas');
     canvas2 = document.getElementById('c2');
@@ -72,9 +88,27 @@ window.onload = function(){
     });
 }   
 
+var perAngry = 0.0
+var perFear = 0.0
+var perHappy = 0.0
+var perNeutral = 0.0
+var perSad = 0.0
+var perSuprise = 0.0
+
+var numFear=0
+var numAngry = 0
+var numHappy = 0
+var numNeutral = 0
+var numSuprise = 0
+var numSad = 0
+var total = 1
+
+            // $('"Anger: ' + perAngry + '"%"').appendTo('#anger');
+            // Change percentages of emotions detected after every image
+
 function record(){
   /** Initialise timing variables **/
-  var lengthBetweenCapture = 1 * 1000* 60 * 60; // how long till next capture
+  var lengthBetweenCapture = 3 * 1000* 60 * 60; // how long till next capture
   var fequencyOfCaptures = 1 * 1000; //seconds between photos
   var amountOfPhotos = 100; // amount of photos to capture
   var counter = 0;
@@ -84,9 +118,63 @@ function record(){
     if(counter < amountOfPhotos){ 
         setTimeout(capture, fequencyOfCaptures); //set time till next image
         document.getElementById('snap-count').innerHTML = "Snapshot: " + counter.toString();
-        ctx.drawImage(video, rectX+ 100, rectY +90, rect_width +70,  rect_height +50, 0, 0, 300, 150);
-      }
+        ctx.drawImage(video, rectX+ 100, rectY +90, rect_width +70,  rect_height +50, 0, 0, 200, 150);
+      
+    
+            var canvasObj = document.getElementById('c2')
+            var image = canvasObj.toDataURL();
+            // console.log(image)
+
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:5000/api",
+                data: image, 
+                success: function(data){
+                        console.log(data)
+
+                        if(data == 'Fear'){
+                          numFear++  
+                        }
+                        else if(data == 'Angry'){
+                            numAngry++
+                        }
+                        else if(data == 'Happy'){
+                            numHappy++
+                        }
+                        else if(data == 'Neutral'){
+                            numNeutral++
+                        }
+                        else if(data == 'Sad'){
+                            numSad++
+                        }
+                        else{
+                            numSuprise++
+                        }
+                 }
+            });
+
+            total  = numAngry + numFear + numHappy + numNeutral + numSad + numSuprise
+            
+            perAngry = Math.floor((numAngry/total) * 100);
+            perFear = Math.floor((numFear / total) * 100);
+            perHappy = Math.floor((numHappy / total) * 100);
+            perNeutral = Math.floor((numNeutral / total) * 100);
+            perSad = Math.floor((numSad / total) * 100);
+            perSuprise =Math.floor((numSuprise / total) * 100);
+    
+
+            // $('"Anger: ' + perAngry + '"%"').appendTo('#anger');
+            // Change percentages of emotions detected after every image
+            document.getElementById('angry').innerHTML = "Anger: " + perAngry + "%";
+            document.getElementById('fear').innerHTML = "Fear: " + perFear + "%";
+            document.getElementById('happy').innerHTML = "Happiness: " + perHappy + "%";
+            document.getElementById('neutral').innerHTML = "Neutral: " + perNeutral + "%";
+            document.getElementById('sad').innerHTML = "Sadness: " + perSad + "%";
+            document.getElementById('suprise').innerHTML = "Surprise: " + perSuprise + "%";
+        }
     }
+
+
 
     //Recursive function called 
     function captures() {
@@ -98,3 +186,10 @@ function record(){
     // start capturing
     captures();
 }
+
+
+
+
+
+
+
