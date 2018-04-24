@@ -96,7 +96,7 @@ function record(){
   /** Initialise timing variables **/
   var lengthBetweenCapture = 2 * 1000* 60 * 60; // how long till next capture
   var fequencyOfCaptures = 1 * 1000; //seconds between photos
-  var amountOfPhotos = 20; // amount of photos to capture
+  var amountOfPhotos = 100; // amount of photos to capture
   var counter = 0;
 
   var capture = function () {    
