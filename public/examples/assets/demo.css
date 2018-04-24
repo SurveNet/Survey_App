@@ -115,6 +115,17 @@
   display: flex;
 }
 
+.metrics-contrainer{
+  margin-top: -1%;
+  margin-left: 35px;
+  width: 45%;
+}
+.metrics-contrainer .metrics-header{
+    display:flex;
+
+}
+
+
 .sentiment-table{
   width: 270px;
   height: 200px;
@@ -188,7 +199,6 @@ $color-form-highlight: #EEEEEE;
   margin-left: -3px;
   top: 5px;
 }
-
 
 
 /********************************/
