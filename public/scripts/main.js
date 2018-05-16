@@ -106,7 +106,7 @@ function record(){
     if(counter < amountOfPhotos){ 
         setTimeout(capture, fequencyOfCaptures); //set time till next image
         document.getElementById('snap-count').innerHTML = "Snapshot: " + counter.toString();
-        ctx.drawImage(video, rectX+ 100, rectY +90, rect_width +70,  rect_height +50, 0, 0, 200, 150);
+        ctx.drawImage(video, rectX+ 100, rectY +100, rect_width +80,  rect_height +60, 0, 0, 200, 150);
           
         var canvasObj = document.getElementById('c2')
         var image = canvasObj.toDataURL();
