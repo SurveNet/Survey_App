@@ -117,7 +117,7 @@ function record(){
             success: function(data){
                     console.log(data)
 
-                    if(data == 'Fear'){
+                    if(data == 'x'){
                         numFear++  
                         document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
                     }
@@ -129,7 +129,7 @@ function record(){
                         numHappy++
                         document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
                     }
-                    else if(data == 'Neutral'){
+                    else if(data == 'Fear'){
                         numNeutral++
                         document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
                     }
