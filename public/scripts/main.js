@@ -92,6 +92,8 @@ var numSuprise = 0
 var numSad = 0
 var total = 0
 
+console.log("TESTING")
+
 function record(){
   /** Initialise timing variables **/
   var lengthBetweenCapture = 2 * 1000* 60 * 60; // how long till next capture
@@ -131,7 +133,7 @@ function record(){
                     }
                     else if(data == 'Fear'){
                         numNeutral++
-                        document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
+                        document.getElementById('detected').innerHTML = "Emotion Detected: " + 'Neutral';
                     }
                     else if(data == 'Sad'){
                         numSad++
