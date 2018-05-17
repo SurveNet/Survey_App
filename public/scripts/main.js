@@ -106,7 +106,7 @@ function record(){
     if(counter < amountOfPhotos){ 
         setTimeout(capture, fequencyOfCaptures); //set time till next image
         document.getElementById('snap-count').innerHTML = "Snapshot: " + counter.toString();
-        ctx.drawImage(video, rectX+ 120, rectY +100, rect_width +80,  rect_height +60, 0, 0, 200, 150);
+        ctx.drawImage(video, rectX+ 90, rectY +80, rect_width +80,  rect_height +60, 0, 0, 200, 150);
           
         var canvasObj = document.getElementById('c2')
         var image = canvasObj.toDataURL();
@@ -119,28 +119,32 @@ function record(){
             success: function(data){
                     console.log(data)
 
-                    if(data == 'x'){
-                        numFear++  
-                        document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
+                    console.log(data)
+                    if(data == 'Fear'){
+                        numNeutral++
+                        // numFear++  
+                        // document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
+                        document.getElementById('detected').innerHTML = "Emotion Detected: Neutral";
                     }
                     else if(data == 'Angry'){
                         numAngry++
-                        document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
+                        document.getElementById('detected').innerHTML = "Emotion Detected: Angry";
                     }
                     else if(data == 'Happy'){
                         numHappy++
-                        document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
+                        document.getElementById('detected').innerHTML = "Emotion Detected: Happy";
                     }
-                    else if(data == 'Fear'){
+                    else if(data == 'Neutral'){
                         numNeutral++
-                        document.getElementById('detected').innerHTML = "Emotion Detected: " + 'Neutral';
+                        document.getElementById('detected').innerHTML = "Emotion Detected: Neutral";
                     }
                     else if(data == 'Sad'){
                         numSad++
-                        document.getElementById('detected').innerHTML = "Emotion Detected: " + data;
+                        document.getElementById('detected').innerHTML = "Emotion Detected: Sad";
                     }
                     else{
                         numSuprise++
+                        document.getElementById('detected').innerHTML = "Emotion Detected: Suprise";
                     }
                  }
             });
@@ -181,12 +185,24 @@ function record(){
         }
         if(counter+1 > amountOfPhotos){
 
-            if(perHappy < 40){
-                alert("You gave bad customer service\nHappiness level was "+ perHappy+ "%");
-                location.reload();
+            if(perAngry > 30 || perSad > 30){
+                if(perAngry > perSad){
+                    alert("You gave bad customer service\nCustomer was angry "+perAngry+ "% of the time");
+                    location.reload();
+                }
+                else{
+                    alert("You gave bad customer service\nCustomer was sad "+perSad+ "% of the time");
+                    location.reload();
+                }
             }else{
-                alert("You gave good customer service\nHappiness level was " + perHappy +"%");
-                location.reload();
+                if(perNeutral > perHappy){
+                    alert("You gave bad customer service\nCustomer was neutral "+perNeutral+ "% of the time");
+                    location.reload();
+                }
+                else{
+                    alert("You gave bad customer service\nCustomer was happy "+perHappy+ "% of the time");
+                    location.reload();
+                }
             }
         }
     }
